@@ -1,8 +1,8 @@
 # Site settings
 title: Vinícius Temóteo Ferrari - Resume
 description: Full-Stack Developer Resume
-url: "https://vtferrari.github.io"
-baseurl: "/vtferrari-space"
+url: "https://vtferrari.space"
+baseurl: ""
 
 # Build settings
 markdown: kramdown
