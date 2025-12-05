@@ -1,8 +1,8 @@
 # Site settings
 title: Vinícius Temóteo Ferrari - Resume
 description: Full-Stack Developer Resume
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+url: "https://vtferrari.github.io"
+baseurl: "/vtferrari-space"
 
 # Build settings
 markdown: kramdown
