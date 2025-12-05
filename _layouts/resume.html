@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.data.resume.name }} - {{ site.data.resume.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="container">
+    <header class="resume-header">
+      <h1 class="resume-name">{{ site.data.resume.name }}</h1>
+      <p class="resume-title">{{ site.data.resume.title }}</p>
+      <div class="resume-contact">
+        <span>{{ site.data.resume.location }}</span>
+        <span>•</span>
+        <a href="tel:{{ site.data.resume.phone }}">{{ site.data.resume.phone }}</a>
+        <span>•</span>
+        <a href="mailto:{{ site.data.resume.email }}">{{ site.data.resume.email }}</a>
+        <span>•</span>
+        <a href="{{ site.data.resume.github }}" target="_blank">GitHub</a>
+      </div>
+    </header>
+
+    <section class="resume-section">
+      <h2 class="section-title">About</h2>
+      <div class="section-content">
+        {{ site.data.resume.about | markdownify }}
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="section-title">Experience</h2>
+      <div class="section-content">
+        {% for exp in site.data.resume.experience %}
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3 class="experience-company">{{ exp.company }}</h3>
+            <span class="experience-date">{{ exp.start_date }} – {{ exp.end_date }}</span>
+          </div>
+          <p class="experience-position">{{ exp.position }}</p>
+          <div class="experience-description">
+            {{ exp.description | markdownify }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="section-title">Skills</h2>
+      <div class="section-content">
+        {% if site.data.resume.skills.languages %}
+        <div class="skills-group">
+          <h3>Languages</h3>
+          <p>{{ site.data.resume.skills.languages | join: ", " }}</p>
+        </div>
+        {% endif %}
+        
+        {% if site.data.resume.skills.frameworks %}
+        <div class="skills-group">
+          <h3>Frameworks & Libraries</h3>
+          <p>{{ site.data.resume.skills.frameworks | join: ", " }}</p>
+        </div>
+        {% endif %}
+        
+        {% if site.data.resume.skills.databases %}
+        <div class="skills-group">
+          <h3>Databases</h3>
+          <p>{{ site.data.resume.skills.databases | join: ", " }}</p>
+        </div>
+        {% endif %}
+        
+        {% if site.data.resume.skills.tools %}
+        <div class="skills-group">
+          <h3>Tools & Technologies</h3>
+          <p>{{ site.data.resume.skills.tools | join: ", " }}</p>
+        </div>
+        {% endif %}
+        
+        {% if site.data.resume.skills.concepts %}
+        <div class="skills-group">
+          <h3>Concepts & Practices</h3>
+          <p>{{ site.data.resume.skills.concepts | join: ", " }}</p>
+        </div>
+        {% endif %}
+        
+        {% if site.data.resume.skills.frontend %}
+        <div class="skills-group">
+          <h3>Frontend</h3>
+          <p>{{ site.data.resume.skills.frontend | join: ", " }}</p>
+        </div>
+        {% endif %}
+        
+        {% if site.data.resume.skills.methodologies %}
+        <div class="skills-group">
+          <h3>Methodologies</h3>
+          <p>{{ site.data.resume.skills.methodologies | join: ", " }}</p>
+        </div>
+        {% endif %}
+        
+        {% if site.data.resume.skills.cloud %}
+        <div class="skills-group">
+          <h3>Cloud & AWS</h3>
+          <p>{{ site.data.resume.skills.cloud | join: ", " }}</p>
+        </div>
+        {% endif %}
+        
+        {% if site.data.resume.skills.design %}
+        <div class="skills-group">
+          <h3>Design Tools</h3>
+          <p>{{ site.data.resume.skills.design | join: ", " }}</p>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="section-title">Education</h2>
+      <div class="section-content">
+        {% for edu in site.data.resume.education %}
+        <div class="education-item">
+          <div class="education-header">
+            <h3 class="education-institution">{{ edu.institution }}</h3>
+            <span class="education-date">{{ edu.start_date }} – {{ edu.end_date }}</span>
+          </div>
+          <p class="education-degree">{{ edu.degree }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2 class="section-title">Other Relevant Courses</h2>
+      <div class="section-content">
+        {% for course in site.data.resume.courses %}
+        <div class="course-item">
+          <h3 class="course-name">{{ course.name }}</h3>
+          <p class="course-details">
+            {{ course.institution }}
+            {% if course.code %} ({{ course.code }}){% endif %}
+            {% if course.year %} • {{ course.year }}{% endif %}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+

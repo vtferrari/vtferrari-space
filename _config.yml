@@ -1,0 +1,15 @@
+# Site settings
+title: Vinícius Temóteo Ferrari - Resume
+description: Full-Stack Developer Resume
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Resume data
+resume: site.data.resume
+

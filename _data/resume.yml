@@ -1,0 +1,212 @@
+# Personal Information
+name: Vinícius Temóteo Ferrari
+title: Full-Stack Developer
+location: Ynglingagatan 7-1301, Stockholm, Sweden
+phone: "+46 070 621 97 38"
+email: vtferrari@hotmail.com
+github: https://github.com/vtferrari
+nationality: Brazilian
+age: 33
+marital_status: Single
+
+# Brief/About
+about: |
+  Experienced Full-Stack Developer with a passion for technology, Spring Boot, and front-end development, boasting
+  over 15 years of expertise. Well-versed in application security and dedicated to adhering to Clean Code principles,
+  my journey as a Software Engineer has allowed me to architect and maintain robust APIs, serving millions of global
+  users. Collaborating with diverse teams, I ensure seamless API deployments and exceptional user experiences.
+  
+  Over the years, I have excelled in developing scalable applications using cutting-edge technologies and data-driven
+  methodologies to deliver optimal value to businesses. Cloud platforms like AWS have been my expertise for over a
+  decade, while Kubernetes and CI/CD tools have streamlined my development workflows. I efficiently manage
+  resources with infra-as-code tools like Terraform and Cloudformation, reducing manual overhead.
+  
+  Monitoring system health is essential for me, and I leverage tools such as Grafana and Datadog to ensure optimal
+  service availability. While I may not have extensive experience with certain data pipelines and orchestrators, my
+  eagerness to learn and adapt to new technologies is unwavering.
+  
+  Throughout my career, I maintain a professional communication style, prioritizing clarity, and effectiveness. This
+  approach fosters seamless collaboration, ensuring successful project delivery and achieving team goals.
+
+# Experience
+experience:
+  - company: Klarna
+    position: Senior Backend Engineer
+    start_date: "Jun 2021"
+    end_date: "Current"
+    description: |
+      Experienced Senior Engineer with a focus on Monthly Invoice at Klarna, contributing to the development of
+      scalable systems using Spring Boot and adopting a microservices architecture with an event-driven
+      approach. Instrumental in revamping the email/letter/push-notification delivery system, enabling it to
+      efficiently process and send Kafka messages to one million users, reducing the processing time from 6 hours
+      to just 2 hours. Demonstrated commitment to service quality by suggesting and implementing CI/CD process
+      improvements.
+      
+      Additionally, played a key role in the successful migration of cloud management services, leveraging AWS
+      expertise. Proficiently handled the migration of RDS databases. Implemented Datadog and Sentry
+      monitoring solutions and established integrations with GraphQL, enhancing system performance and user
+      experience.
+
+  - company: CVC Corp
+    position: IT Specialist
+    start_date: "Apr 2019"
+    end_date: "Apr 2021"
+    description: |
+      Foment Agile usage, develop microservice oriented systems to very high volume of web requests, using REST
+      APIs powered by Java and Spring. Message queue with RabbitMQ and Kafka to stream data with very low
+      latency. NoSQL Databases like MongoDB, ElasticSearch 6 and Redis, as well as relational databases.
+      Use of Kubernetes, Maven, Git, Jenkins and Docker.
+
+  - company: Serasa Experian
+    position: Java Developer
+    start_date: "Apr 2018"
+    end_date: "Feb 2019"
+    description: |
+      REST microservices development powered by Java and Spring for marketing and data enrichment solutions
+      at very low latency. Use of RabbitMQ and Kafka, SQL and NoSQL databases, and ElasticSearch 6. Kubernetes,
+      Maven GIT, Jenkins, Docker all deployed at a scalable and powerful cloud environment powered by AWS and
+      Openshift (Red Hat).
+      Use of code verification tools (Veracode, Sonar) to ensure application security and compliance against
+      privacy internal policies and international privacy and data protection laws (GDPR).
+
+  - company: Netshoes
+    position: Java Developer
+    start_date: "Jul 2017"
+    end_date: "Apr 2018"
+    description: |
+      REST application development for high volume of transactions using Java and Spring, RabbitMQ, HornetQ
+      and Kafka. Use of NoSQL DBs, distributed processing frameworks (Big Data) with Cassandra, ElasticSearch,
+      Redis, Maven, Git, Gulp, Grunt, Jenkins, all in AWS cloud environment (EC2, S3, SNS).
+
+  - company: AndJoin Tecnologia da Informação ltda-ME
+    position: Full Stack Developer
+    start_date: "May 2016"
+    end_date: "Jun 2017"
+    description: |
+      Web development, RESTful with Java and Spring, using as Front-End technology: Angular JS.
+      Docker Maven, GIT, Gulp, Grunt, Jenkins, Cloud Amazon (EC2, RDS, S3, SNS).
+
+  - company: Smart Staff do Brasil ltda
+    position: System Analyst
+    start_date: "Aug 2013"
+    end_date: "May 2016"
+    description: |
+      System development with Java (JEE6, JSF-Primefaces) and PlayFramework, Maven, GIT, Jenkins, ambiente de
+      cloud Amazon (EC2, RDS).
+
+  - company: Zunchini & Ferrari – Prestação de Serviços de Arte e Criação ltda-ME
+    position: Web Designer e Software Developer
+    start_date: "Jul 2010"
+    end_date: "Jan 2013"
+    description: |
+      Software and Site developer using PHP, ASP, JavaScript, HTML5, CSS3, MySql, JEE6 (JAVA), JSF-Primefaces
+      (JAVA), Twitter Bootstrap.
+
+# Skills
+skills:
+  languages:
+    - "Advanced English"
+    - "JAVA"
+    - "PHP"
+    - "Node"
+    - "HTML5"
+    - "ASP"
+  
+  frameworks:
+    - "JUnit"
+    - "Spring Boot"
+    - "Spring MVC"
+    - "Spring Data"
+    - "OAuth2"
+    - "JWT"
+    - "JSF"
+    - "JSP"
+    - "Servlet"
+    - "PlayFramework"
+    - "Angular"
+    - "Bootstrap"
+  
+  databases:
+    - "MongoDB"
+    - "Redis"
+    - "ElasticSearch"
+    - "Cassandra"
+    - "MySQL"
+    - "MS SQL"
+    - "Oracle"
+  
+  tools:
+    - "Sonar"
+    - "Jenkins"
+    - "Kubernetes"
+    - "OpenShift"
+    - "Git"
+    - "Maven"
+    - "Ant"
+    - "Ivy"
+    - "Gradle"
+    - "SBT"
+    - "Grunt"
+    - "Gulp"
+    - "Docker"
+  
+  concepts:
+    - "Microservices oriented architecture"
+    - "OOP"
+    - "TDD"
+    - "Design Patterns"
+    - "UML"
+  
+  frontend:
+    - "Javascript"
+    - "Angular"
+    - "CSS"
+    - "SASS"
+    - "LESS"
+    - "HTML"
+    - "PHP"
+  
+  methodologies:
+    - "Scrum"
+    - "XP"
+    - "Kanban"
+    - "Less"
+    - "SAFe framework"
+  
+  cloud:
+    - "AWS"
+    - "EC2"
+    - "S3"
+    - "RDS"
+    - "CloudFront"
+    - "Route53"
+    - "CloudWatch"
+    - "SES"
+  
+  design:
+    - "Photoshop"
+    - "CorelDraw"
+
+# Education
+education:
+  - institution: "Faculdade de Tecnologia Antônio Russo - São Caetano do Sul (FATEC)"
+    degree: "System Development and Analysis"
+    start_date: "Jul 2010"
+    end_date: "Jul 2015"
+
+# Courses
+courses:
+  - name: "Flash & Action Script"
+    institution: "Saliens"
+    year: "2008"
+  
+  - name: "Agile practices for JAVA software development"
+    institution: "Caelum"
+    code: "PM-87"
+    year: "2015"
+  
+  - name: "Agile SCRUM project management"
+    institution: "Caelum"
+    code: "PM-83"
+    year: "2015"
+
