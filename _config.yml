@@ -7,6 +7,8 @@ repository: vtferrari/vtferrari-space
 
 # Build settings
 markdown: kramdown
+include:
+  - .well-known
 plugins:
   - jekyll-feed
   - jekyll-seo-tag

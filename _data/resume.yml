@@ -11,8 +11,7 @@ hero_intro: |
 hero_caption: "My creative space, where masterpieces are born"
 # Optional: initials shown when no profile_photo (default: VT)
 initials: VT
-# Optional: add your photo path (e.g. assets/images/profile.jpg) to show profile image
-# profile_photo: assets/images/profile.jpg
+profile_photo: assets/img/perfil.png
 # Optional: add workspace/setup image path for hero visual
 # hero_image: assets/images/workspace.jpg
 location: Ynglingagatan 7-1301, Stockholm, Sweden
