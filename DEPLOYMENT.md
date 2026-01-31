@@ -74,15 +74,33 @@ O GitHub Pages atualizará automaticamente em alguns minutos.
 
 ### Usar domínio personalizado
 
-1. Crie um arquivo `CNAME` na raiz do projeto:
-   ```
-   seudominio.com
-   ```
+#### Passo 1: Configurar no GitHub
+1. Acesse o repositório no GitHub
+2. Vá em **Settings** → **Pages** (menu "Code and automation")
+3. Em **Custom domain**, digite seu domínio (ex: `vtferrari.space`)
+4. Clique em **Save** (isso cria/atualiza o arquivo CNAME no repositório)
+5. Aguarde a verificação DNS (pode levar alguns minutos)
+6. Marque **Enforce HTTPS** quando a opção ficar disponível (pode levar até 24h)
 
-2. Configure seu DNS para apontar para:
-   ```
-   seu-usuario.github.io
-   ```
+#### Passo 2: Configurar DNS no provedor do domínio
+
+**Para domínio apex** (ex: `vtferrari.space` - sem www):
+- Crie **4 registros A** apontando para os IPs do GitHub Pages:
+  ```
+  185.199.108.153
+  185.199.109.153
+  185.199.110.153
+  185.199.111.153
+  ```
+- Ou use **1 registro ALIAS/ANAME** apontando para `seu-usuario.github.io`
+
+**Para subdomínio www** (ex: `www.vtferrari.space`):
+- Crie um **registro CNAME** apontando para `seu-usuario.github.io`
+
+#### Solução de problemas (erro ERR_CERT_COMMON_NAME_INVALID)
+- **Remover e readicionar o domínio**: Em Settings → Pages, clique em **Remove** no domínio, depois adicione novamente e clique **Save** para reativar o provisionamento do certificado
+- **Aguardar propagação**: Pode levar até 24h para o certificado HTTPS ficar disponível
+- **Cloudflare**: Se usar proxy (nuvem laranja), considere usar "DNS only" (nuvem cinza) temporariamente para testar
 
 ### Ajustar baseurl para repositório de projeto
 
@@ -94,6 +112,19 @@ baseurl: "/nome-do-repo"
 ```
 
 ## Testar localmente antes de publicar
+
+### Opção 1: Com Docker (recomendado)
+
+```bash
+# Subir o servidor Jekyll (requer Docker instalado)
+docker compose up
+
+# Acessar em http://localhost:4000
+```
+
+O LiveReload está habilitado - alterações nos arquivos atualizam o navegador automaticamente.
+
+### Opção 2: Com Ruby/Bundler
 
 ```bash
 # Instalar dependências

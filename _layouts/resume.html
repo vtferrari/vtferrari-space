@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ site.data.resume.name }} - {{ site.data.resume.title }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
 </head>
 <body>
@@ -12,13 +15,32 @@
       <h1 class="resume-name">{{ site.data.resume.name }}</h1>
       <p class="resume-title">{{ site.data.resume.title }}</p>
       <div class="resume-contact">
-        <span>{{ site.data.resume.location }}</span>
-        <span>•</span>
-        <a href="tel:{{ site.data.resume.phone }}">{{ site.data.resume.phone }}</a>
-        <span>•</span>
-        <a href="mailto:{{ site.data.resume.email }}">{{ site.data.resume.email }}</a>
-        <span>•</span>
-        <a href="{{ site.data.resume.github }}" target="_blank">GitHub</a>
+        <span class="contact-item" title="Location">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span>{{ site.data.resume.location }}</span>
+        </span>
+        <span class="contact-separator"></span>
+        <a href="tel:{{ site.data.resume.phone }}" class="contact-item" title="Phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>{{ site.data.resume.phone }}</span>
+        </a>
+        <span class="contact-separator"></span>
+        <a href="mailto:{{ site.data.resume.email }}" class="contact-item" title="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>{{ site.data.resume.email }}</span>
+        </a>
+        <span class="contact-separator"></span>
+        <a href="{{ site.data.resume.github }}" target="_blank" rel="noopener noreferrer" class="contact-item" title="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          <span>GitHub</span>
+        </a>
+        {% if site.data.resume.linkedin %}
+        <span class="contact-separator"></span>
+        <a href="{{ site.data.resume.linkedin }}" target="_blank" rel="noopener noreferrer" class="contact-item" title="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          <span>LinkedIn</span>
+        </a>
+        {% endif %}
       </div>
     </header>
 
@@ -49,67 +71,103 @@
 
     <section class="resume-section">
       <h2 class="section-title">Skills</h2>
-      <div class="section-content">
+      <div class="section-content skills-grid">
         {% if site.data.resume.skills.languages %}
         <div class="skills-group">
           <h3>Languages</h3>
-          <p>{{ site.data.resume.skills.languages | join: ", " }}</p>
+          <div class="skill-tags">
+            {% for skill in site.data.resume.skills.languages %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
         
         {% if site.data.resume.skills.frameworks %}
         <div class="skills-group">
           <h3>Frameworks & Libraries</h3>
-          <p>{{ site.data.resume.skills.frameworks | join: ", " }}</p>
+          <div class="skill-tags">
+            {% for skill in site.data.resume.skills.frameworks %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
         
         {% if site.data.resume.skills.databases %}
         <div class="skills-group">
           <h3>Databases</h3>
-          <p>{{ site.data.resume.skills.databases | join: ", " }}</p>
+          <div class="skill-tags">
+            {% for skill in site.data.resume.skills.databases %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
         
         {% if site.data.resume.skills.tools %}
         <div class="skills-group">
           <h3>Tools & Technologies</h3>
-          <p>{{ site.data.resume.skills.tools | join: ", " }}</p>
+          <div class="skill-tags">
+            {% for skill in site.data.resume.skills.tools %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
         
         {% if site.data.resume.skills.concepts %}
         <div class="skills-group">
           <h3>Concepts & Practices</h3>
-          <p>{{ site.data.resume.skills.concepts | join: ", " }}</p>
+          <div class="skill-tags">
+            {% for skill in site.data.resume.skills.concepts %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
         
         {% if site.data.resume.skills.frontend %}
         <div class="skills-group">
           <h3>Frontend</h3>
-          <p>{{ site.data.resume.skills.frontend | join: ", " }}</p>
+          <div class="skill-tags">
+            {% for skill in site.data.resume.skills.frontend %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
         
         {% if site.data.resume.skills.methodologies %}
         <div class="skills-group">
           <h3>Methodologies</h3>
-          <p>{{ site.data.resume.skills.methodologies | join: ", " }}</p>
+          <div class="skill-tags">
+            {% for skill in site.data.resume.skills.methodologies %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
         
         {% if site.data.resume.skills.cloud %}
         <div class="skills-group">
           <h3>Cloud & AWS</h3>
-          <p>{{ site.data.resume.skills.cloud | join: ", " }}</p>
+          <div class="skill-tags">
+            {% for skill in site.data.resume.skills.cloud %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
         
         {% if site.data.resume.skills.design %}
         <div class="skills-group">
           <h3>Design Tools</h3>
-          <p>{{ site.data.resume.skills.design | join: ", " }}</p>
+          <div class="skill-tags">
+            {% for skill in site.data.resume.skills.design %}
+            <span class="skill-tag">{{ skill }}</span>
+            {% endfor %}
+          </div>
         </div>
         {% endif %}
       </div>
@@ -148,4 +206,3 @@
   </div>
 </body>
 </html>
-

@@ -1,0 +1,14 @@
+services:
+  jekyll:
+    image: jekyll/jekyll:latest
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/srv/jekyll
+    environment:
+      - PAGES_REPO_NWO=vtferrari/vtferrari-space
+      - JEKYLL_GIT_HOST=github.com
+    command: >
+      sh -c "git config --global --add safe.directory /srv/jekyll &&
+             bundle install &&
+             bundle exec jekyll serve --force_polling --livereload --host 0.0.0.0"

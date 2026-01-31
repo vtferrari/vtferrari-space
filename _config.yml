@@ -3,6 +3,7 @@ title: Vinícius Temóteo Ferrari - Resume
 description: Full-Stack Developer Resume
 url: "https://vtferrari.space"
 baseurl: ""
+repository: vtferrari/vtferrari-space
 
 # Build settings
 markdown: kramdown
