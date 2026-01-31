@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function(){
+      var t=localStorage.getItem('resume-theme');
+      if(!t){var m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)');t=m&&m.matches?'dark':'light';}
+      document.documentElement.setAttribute('data-theme',t);
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ site.data.resume.name }} - {{ site.data.resume.title }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,8 +17,38 @@
   <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
 </head>
 <body>
+  <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+  </button>
   <div class="container">
-    <header class="resume-header">
+    <section class="hero-section {% if site.data.resume.hero_image %}hero-section--with-image{% endif %}">
+      <div class="hero-inner">
+        {% if site.data.resume.hero_image %}
+        <div class="hero-visual">
+          <img src="{{ site.data.resume.hero_image | relative_url }}" alt="{{ site.data.resume.hero_caption }}" class="hero-image">
+          {% if site.data.resume.hero_caption %}
+          <p class="hero-caption">{{ site.data.resume.hero_caption }}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+        <div class="hero-content">
+          {% if site.data.resume.profile_photo %}
+          <img src="{{ site.data.resume.profile_photo | relative_url }}" alt="{{ site.data.resume.name }}" class="hero-avatar">
+          {% else %}
+          <div class="hero-avatar hero-avatar-initials" aria-hidden="true">{{ site.data.resume.initials | default: 'VT' }}</div>
+          {% endif %}
+          <h1 class="hero-greeting">Hi! I'm {{ site.data.resume.name | split: ' ' | first }} 👋</h1>
+          <p class="hero-tagline">{{ site.data.resume.hero_tagline }}</p>
+          <div class="hero-intro">
+            {{ site.data.resume.hero_intro | markdownify }}
+          </div>
+          <a href="#contact" class="hero-cta">Let's Work Together</a>
+        </div>
+      </div>
+    </section>
+
+    <header class="resume-header" id="contact">
       <h1 class="resume-name">{{ site.data.resume.name }}</h1>
       <p class="resume-title">{{ site.data.resume.title }}</p>
       <div class="resume-contact">
@@ -204,5 +241,53 @@
       </div>
     </section>
   </div>
+  <script>
+    (function() {
+      const STORAGE_KEY = 'resume-theme';
+      const html = document.documentElement;
+
+      function getStoredTheme() {
+        try {
+          return localStorage.getItem(STORAGE_KEY);
+        } catch (e) {
+          return null;
+        }
+      }
+
+      function setTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        try {
+          localStorage.setItem(STORAGE_KEY, theme);
+        } catch (e) {}
+      }
+
+      function getPreferredTheme() {
+        const stored = getStoredTheme();
+        if (stored) return stored;
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      }
+
+      // Init on load
+      setTheme(getPreferredTheme());
+
+      // Listen for system preference changes (optional)
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+          if (!getStoredTheme()) {
+            setTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+      }
+
+      // Toggle on button click
+      document.querySelector('.theme-toggle').addEventListener('click', function() {
+        const current = html.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    })();
+  </script>
 </body>
 </html>

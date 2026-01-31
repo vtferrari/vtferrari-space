@@ -1,6 +1,20 @@
 # Personal Information
 name: Vinícius Temóteo Ferrari
 title: Full-Stack Developer
+
+# Hero section (top of page intro)
+hero_tagline: "Experienced Full-Stack Developer passionate about Spring Boot, Clean Code, and scalable systems"
+hero_intro: |
+  I'm a Software Engineer with over 15 years of expertise, specializing in architecting robust APIs that serve millions of users worldwide. I thrive on building scalable applications with cutting-edge technologies, from AWS and Kubernetes to microservices and event-driven systems.
+  
+  Whether you're looking for a developer who writes clean, secure code or someone who can streamline CI/CD pipelines and infrastructure—let's connect and build something great together.
+hero_caption: "My creative space, where masterpieces are born"
+# Optional: initials shown when no profile_photo (default: VT)
+initials: VT
+# Optional: add your photo path (e.g. assets/images/profile.jpg) to show profile image
+# profile_photo: assets/images/profile.jpg
+# Optional: add workspace/setup image path for hero visual
+# hero_image: assets/images/workspace.jpg
 location: Ynglingagatan 7-1301, Stockholm, Sweden
 phone: "+46 070 621 97 38"
 email: vtferrari@hotmail.com
