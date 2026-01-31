@@ -5,7 +5,7 @@ title: Full-Stack Developer
 # Hero section (top of page intro)
 hero_tagline: "Experienced Full-Stack Developer passionate about Spring Boot, Clean Code, and scalable systems"
 hero_intro: |
-  I'm a Software Engineer with over 15 years of expertise, specializing in architecting robust APIs that serve millions of users worldwide. I thrive on building scalable applications with cutting-edge technologies, from AWS and Kubernetes to microservices and event-driven systems.
+  I'm a Software Engineer with 20 years of expertise, specializing in architecting robust APIs that serve millions of users worldwide. I thrive on building scalable applications with cutting-edge technologies, from AWS and Kubernetes to microservices and event-driven systems.
   
   Whether you're looking for a developer who writes clean, secure code or someone who can streamline CI/CD pipelines and infrastructure—let's connect and build something great together.
 hero_caption: "My creative space, where masterpieces are born"
@@ -26,7 +26,7 @@ marital_status: Single
 # Brief/About
 about: |
   Experienced Full-Stack Developer with a passion for technology, Spring Boot, and front-end development, boasting
-  over 15 years of expertise. Well-versed in application security and dedicated to adhering to Clean Code principles,
+  20 years of expertise. Well-versed in application security and dedicated to adhering to Clean Code principles,
   my journey as a Software Engineer has allowed me to architect and maintain robust APIs, serving millions of global
   users. Collaborating with diverse teams, I ensure seamless API deployments and exceptional user experiences.
   
@@ -62,14 +62,14 @@ experience:
       experience.
 
   - company: CVC Corp
-    position: IT Specialist
+    position: Technical Leader
     start_date: "Apr 2019"
     end_date: "Apr 2021"
     description: |
-      Foment Agile usage, develop microservice oriented systems to very high volume of web requests, using REST
-      APIs powered by Java and Spring. Message queue with RabbitMQ and Kafka to stream data with very low
-      latency. NoSQL Databases like MongoDB, ElasticSearch 6 and Redis, as well as relational databases.
-      Use of Kubernetes, Maven, Git, Jenkins and Docker.
+      Technical Leader fostering Agile adoption and leading development of microservice-oriented systems handling
+      very high volume of web requests, using REST APIs powered by Java and Spring. Message queues with RabbitMQ
+      and Kafka to stream data with very low latency. NoSQL databases like MongoDB, ElasticSearch 6 and Redis,
+      as well as relational databases. Use of Kubernetes, Maven, Git, Jenkins and Docker.
 
   - company: Serasa Experian
     position: Java Developer
